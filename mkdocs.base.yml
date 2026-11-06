@@ -1,0 +1,73 @@
+site_name: Sport Safety Portal
+site_description: Guidance, standards and tools to manage safety in sport in Singapore.
+site_url: https://sportsafetysandbox.github.io/sportsafety/
+repo_url: https://github.com/sportsafetysandbox/sportsafety
+repo_name: sportsafety
+edit_uri: edit/main/docs/
+copyright: Content is for general guidance only. See the <a href="https://sportsafetysandbox.github.io/sportsafety/help/disclaimer/">Disclaimer</a>.
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  font: false            # fonts set in assets/css/portal.css (Segoe UI, Aptos, Calibri)
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  icon:
+    logo: material/shield-check
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.path
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - toc.follow
+
+extra:
+  status:
+    placeholder: Page in development
+    pilot: Pilot page for review
+
+extra_css:
+  - assets/css/portal.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+
+not_in_nav: |
+  /downloads/
+
+validation:
+  links:
+    not_found: warn
+    anchors: warn

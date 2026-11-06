@@ -1,0 +1,178 @@
+# GENERATED from mkdocs.base.yml + tools/structure.py by tools/build_skeleton.py.
+# Edit those files, not this one.
+
+site_name: Sport Safety Portal
+site_description: Guidance, standards and tools to manage safety in sport in Singapore.
+site_url: https://sportsafetysandbox.github.io/sportsafety/
+repo_url: https://github.com/sportsafetysandbox/sportsafety
+repo_name: sportsafety
+edit_uri: edit/main/docs/
+copyright: Content is for general guidance only. See the <a href="https://sportsafetysandbox.github.io/sportsafety/help/disclaimer/">Disclaimer</a>.
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  font: false            # fonts set in assets/css/portal.css (Segoe UI, Aptos, Calibri)
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  icon:
+    logo: material/shield-check
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.path
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - toc.follow
+
+extra:
+  status:
+    placeholder: Page in development
+    pilot: Pilot page for review
+
+extra_css:
+  - assets/css/portal.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+
+not_in_nav: |
+  /downloads/
+
+validation:
+  links:
+    not_found: warn
+    anchors: warn
+
+nav:
+- Home: index.md
+- I am a...:
+  - Public & Participants:
+    - Public & Participants: participants/index.md
+    - Getting Started: participants/getting-started.md
+    - Environmental Conditions: participants/environmental-conditions.md
+    - Injury & Emergency:
+      - When to Call 995: emergency/when-to-call-995.md
+      - Injuries & First Aid: participants/injury-and-emergency.md
+    - Returning Safely: participants/returning-safely.md
+    - Where You Play: participants/where-you-play.md
+    - Advice for Specific Groups: participants/specific-groups.md
+    - Safe Sport for Participants: participants/safe-sport.md
+  - Activity Organisers:
+    - Sport Activity Organisers: organisers/index.md
+    - Start Here: organisers/start-here.md
+    - Activity Planning:
+      - Activity Planning Overview: organisers/activity-planning.md
+      - Risk Assessment & Risk Control: organisers/risk-assessment.md
+    - Permits, Approvals & Insurance: organisers/permits-approvals-insurance.md
+    - Before Activity: organisers/before-activity.md
+    - During Activity: organisers/during-activity.md
+    - After Activity: organisers/after-activity.md
+  - Facility Operators:
+    - Sport Facility Operators: operators/index.md
+    - Your Responsibilities: operators/responsibilities.md
+    - Inspection & Maintenance: operators/inspection-maintenance.md
+    - Indoor Facilities: operators/indoor-facilities.md
+    - Outdoor Facilities: operators/outdoor-facilities.md
+    - Pool & Aquatic Facilities: operators/pool-aquatic-facilities.md
+    - Operations during Environmental Conditions: operators/environmental-operations.md
+    - Emergency Preparedness: operators/emergency-preparedness.md
+    - Contractors, Hirers & Users: operators/contractors-hirers-users.md
+    - Accessible Facilities: operators/accessible-facilities.md
+  - Coaches & Exercise Professionals:
+    - Coaches & Exercise Professionals: coaches-exercise-professionals/index.md
+    - Registration & Professional Standards: coaches-exercise-professionals/registration-standards.md
+    - Duty of Care: coaches-exercise-professionals/duty-of-care.md
+    - Safe Coaching & Exercise Practice: coaches-exercise-professionals/safe-practice.md
+    - Recognise & Respond: coaches-exercise-professionals/recognise-respond.md
+    - Environmental Conditions: coaches-exercise-professionals/environmental-conditions.md
+    - Safe Sport & Safeguarding: coaches-exercise-professionals/safe-sport.md
+    - Continuing Professional Development: coaches-exercise-professionals/cpd.md
+  - Sport Organisations:
+    - Sport Organisations: organisations/index.md
+    - Safety Management System:
+      - SMS Overview: organisations/sms/index.md
+      - Leadership & Governance: organisations/sms/leadership-governance.md
+      - Plan: organisations/sms/plan.md
+      - Do: organisations/sms/do.md
+      - Check: organisations/sms/check.md
+      - Act: organisations/sms/act.md
+    - Safety Domains: organisations/safety-domains.md
+    - Getting Started Roadmap: organisations/getting-started-roadmap.md
+- Safety Topics:
+  - Safety Topics: topics/index.md
+  - Environmental:
+    - Heat Stress & Heat Illness: topics/environmental/heat-stress.md
+    - Haze & Air Quality: topics/environmental/haze.md
+    - Lightning & Inclement Weather: topics/environmental/lightning.md
+    - Sea State & Water Conditions: topics/environmental/water-conditions.md
+  - Medical & Emergency:
+    - Cardiac Arrest & AED: topics/medical/cardiac-arrest-aed.md
+    - Concussion: topics/medical/concussion.md
+    - Drowning: topics/medical/drowning.md
+    - Serious & Spinal Injury: topics/medical/serious-spinal-injury.md
+    - Asthma & Anaphylaxis: topics/medical/asthma-anaphylaxis.md
+  - Safe Sport: topics/safe-sport.md
+  - Venue & Equipment: topics/venue-equipment.md
+  - Sport-specific Guidance: topics/sport-specific.md
+- Toolkit:
+  - Toolkit: toolkit/index.md
+  - Templates: toolkit/templates.md
+  - Checklists: toolkit/checklists.md
+  - Interactive Tools: toolkit/tools.md
+- Standards & Guidelines:
+  - Standards & Guidelines: standards/index.md
+  - Sport Safety Standards: standards/standards.md
+  - Codes of Practice: standards/codes-of-practice.md
+  - Procedures & Protocols: standards/procedures-protocols.md
+  - Legislation & Regulatory Resources: standards/legislation.md
+  - International References: standards/international.md
+- Learn:
+  - Learn: learn/index.md
+  - Training & Capability Development: learn/training.md
+  - Case Studies & Lessons Learnt: learn/case-studies.md
+  - Safety Campaigns: learn/campaigns.md
+  - News & Events: learn/news-events.md
+- Help & About:
+  - Help & About: help/index.md
+  - FAQ: help/faq.md
+  - Glossary: help/glossary.md
+  - Site Map: help/site-map.md
+  - About the Portal: help/about.md
+  - Contact & Feedback: help/contact.md
+  - What's New: help/whats-new.md
+  - Privacy: help/privacy.md
+  - Terms of Use: help/terms.md
+  - Accessibility: help/accessibility.md
+  - Disclaimer: help/disclaimer.md

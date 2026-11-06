@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{#- Persistent bar on every page: emergency route + live official conditions -#}
+{% block announce %}
+<div class="ssp-alertbar" role="region" aria-label="Emergency and live conditions">
+  <a class="ssp-emergency" href="{{ base_url }}/emergency/when-to-call-995/">
+    <span aria-hidden="true">&#9742;</span> Emergency: call 995
+  </a>
+  <span class="ssp-live">
+    <strong>Live conditions:</strong>
+    <a href="https://www.weather.gov.sg/" target="_blank" rel="noopener">Heat stress &amp; lightning</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://www.haze.gov.sg/" target="_blank" rel="noopener">Haze</a>
+    <span class="ssp-live-note">(official sources, opens in new tab)</span>
+  </span>
+</div>
+{% endblock %}
+
+{#- Status banner for pilot / placeholder pages and Last reviewed date -#}
+{% block content %}
+  {% if page.meta and page.meta.status == "pilot" %}
+  <div class="ssp-status ssp-status--pilot">Pilot page: content drafted for review{% if page.meta.last_reviewed %} · Last reviewed {{ page.meta.last_reviewed }}{% endif %}</div>
+  {% endif %}
+  {{ super() }}
+{% endblock %}

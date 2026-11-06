@@ -1,0 +1,88 @@
+/* Sport Safety Portal — design tokens and overrides for MkDocs Material.
+   Colours approximate; confirm before launch. Organisation-agnostic: no logos or brand artwork. */
+
+:root {
+  --color-primary: #E31E2D;
+  --color-primary-dark: #A6192E;
+  --color-orange: #F7A631;
+  --color-green: #2BA84A;
+  --color-lime: #8DC63F;
+  --color-blue: #0057A8;
+  --color-text: #111111;
+  --color-bg: #FFFFFF;
+  --color-surface: #F4F4F4;
+  --font-primary: "Segoe UI", Aptos, Calibri, sans-serif;
+
+  /* Material theme hooks */
+  --md-primary-fg-color: var(--color-primary);
+  --md-primary-fg-color--light: #EC5A63;
+  --md-primary-fg-color--dark: var(--color-primary-dark);
+  --md-primary-bg-color: #FFFFFF;
+  --md-accent-fg-color: var(--color-primary-dark);
+  --md-typeset-a-color: var(--color-primary-dark);
+  --md-text-font-family: var(--font-primary);
+  --md-code-font-family: Consolas, "Courier New", monospace;
+}
+
+body, .md-typeset { font-family: var(--font-primary); }
+.md-typeset { font-size: 0.85rem; line-height: 1.6; color: var(--color-text); }
+.md-typeset h1, .md-typeset h2, .md-typeset h3 { font-weight: 700; color: var(--color-text); }
+.md-typeset h1 { font-size: 1.9rem; }
+.md-typeset h2 { border-bottom: 2px solid var(--color-surface); padding-bottom: .2em; }
+
+/* Header uses deep crimson so the brighter Emergency button stands apart */
+.md-header, .md-tabs { background-color: var(--color-primary-dark); }
+
+/* ---------- Persistent alert bar ---------- */
+.md-banner { background: var(--color-text); color: #fff; }
+.md-banner a { color: #fff; }
+.ssp-alertbar { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.2rem; font-size: .75rem; }
+.ssp-emergency {
+  background: var(--color-primary); color: #fff !important; font-weight: 700;
+  padding: .35rem .8rem; border-radius: 4px; text-decoration: none;
+  border: 2px solid #fff;
+}
+.ssp-emergency:hover, .ssp-emergency:focus { background: #fff; color: var(--color-primary) !important; }
+.ssp-live, .ssp-live strong { color: #fff; }
+.ssp-live a { text-decoration: underline; }
+
+/* Readable admonitions */
+.md-typeset .admonition, .md-typeset details { font-size: .8rem; }
+
+/* Process steps strip */
+.md-typeset ol.ssp-steps { list-style: none; counter-reset: s; display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0 .4rem; padding: 0; }
+.md-typeset ol.ssp-steps li { counter-increment: s; margin: 0; background: var(--color-surface); border-top: 3px solid var(--color-primary); padding: .35rem .7rem; font-weight: 600; font-size: .75rem; }
+.md-typeset ol.ssp-steps li::before { content: counter(s) ". "; color: var(--color-primary-dark); }
+.ssp-live-note { opacity: .75; }
+
+/* ---------- Page status ---------- */
+.ssp-status { font-size: .7rem; padding: .4rem .7rem; border-radius: 4px; margin-bottom: 1rem; display: inline-block; }
+.ssp-status--pilot { background: #FFF4E0; border-left: 4px solid var(--color-orange); }
+
+/* ---------- Condition status chips: always text + colour ---------- */
+.ssp-chip { display: inline-block; font-weight: 700; padding: .1rem .55rem; border-radius: 3px; color: #111; }
+.ssp-chip--low { background: #DFF3E4; border: 1px solid var(--color-green); }
+.ssp-chip--moderate { background: #FFF0D6; border: 1px solid var(--color-orange); }
+.ssp-chip--high { background: #FCE0E2; border: 1px solid var(--color-primary); }
+
+/* ---------- Home hero ---------- */
+.ssp-hero { background: var(--color-surface); border-left: 6px solid var(--color-primary); padding: 1.2rem 1.4rem; margin-bottom: 1.5rem; }
+.ssp-hero h1 { margin: 0 0 .4rem; }
+.ssp-hero p { margin: 0; font-size: .95rem; }
+
+/* Cards */
+.md-typeset .grid.cards > ul > li, .md-typeset .grid > .card { border-top: 4px solid var(--color-primary); }
+.md-typeset .grid.cards > ul > li:hover { border-color: var(--color-primary-dark); }
+
+/* Source list and review footer */
+.ssp-sources { font-size: .75rem; background: var(--color-surface); padding: .8rem 1rem; border-radius: 4px; }
+
+/* Emergency call-out on pages */
+.md-typeset .admonition.danger, .md-typeset details.danger { border-color: var(--color-primary); }
+.md-typeset .danger > .admonition-title, .md-typeset .danger > summary { background-color: #FCE0E2; }
+
+.md-typeset table:not([class]) th { background: var(--color-surface); color: var(--color-text); }
+
+@media print {
+  .md-banner, .md-header, .md-tabs, .md-sidebar, .md-footer { display: none; }
+}
